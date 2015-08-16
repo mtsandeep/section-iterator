@@ -1,0 +1,29 @@
+{
+  "name": "section-iterator",
+  "version": "1.0.0",
+  "description": "Simple iterator for flat and multi section lists",
+  "main": "dist/sectionIterator.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moroshko/section-iterator.git"
+  },
+  "author": "Misha Moroshko <michael.moroshko@gmail.com>",
+  "scripts": {
+    "lint": "eslint src",
+    "test": "mocha --opts mocha.opts",
+    "dist": "rm -rf dist && mkdir dist && babel src/sectionIterator.js --out-file dist/sectionIterator.js",
+    "ci-build": "npm run lint && npm test && npm run dist"
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-eslint": "^4.0.5",
+    "chai": "^3.2.0",
+    "eslint": "^1.1.0",
+    "mocha": "^2.2.5"
+  },
+  "keywords": [
+    "iterator",
+    "array"
+  ],
+  "license": "MIT"
+}
