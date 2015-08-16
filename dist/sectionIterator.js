@@ -8,7 +8,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 
 exports["default"] = function (_ref) {
   var data = _ref.data;
-  var isMultiSection = _ref.isMultiSection;
+  var multiSection = _ref.multiSection;
 
   function nextNonEmptySectionIndex(sectionIndex) {
     if (sectionIndex === null) {
@@ -44,7 +44,7 @@ exports["default"] = function (_ref) {
     var sectionIndex = _position[0];
     var itemIndex = _position[1];
 
-    if (isMultiSection) {
+    if (multiSection) {
       if (itemIndex === null || itemIndex === data[sectionIndex] - 1) {
         sectionIndex = nextNonEmptySectionIndex(sectionIndex);
 
@@ -75,7 +75,7 @@ exports["default"] = function (_ref) {
     var sectionIndex = _position2[0];
     var itemIndex = _position2[1];
 
-    if (isMultiSection) {
+    if (multiSection) {
       if (itemIndex === null || itemIndex === 0) {
         sectionIndex = prevNonEmptySectionIndex(sectionIndex);
 

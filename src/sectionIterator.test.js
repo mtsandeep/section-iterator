@@ -1,17 +1,17 @@
 import { expect } from 'chai';
 import createSectionIterator from './sectionIterator';
 
-let sectionIterator, isMultiSection;
+let sectionIterator, multiSection;
 
 describe('sectionIterator', () => {
   describe('with no sections', () => {
     before(() => {
-      isMultiSection = false;
+      multiSection = false;
     });
 
     describe('and no items', () => {
       before(() => {
-        sectionIterator = createSectionIterator({ data: 0, isMultiSection });
+        sectionIterator = createSectionIterator({ data: 0, multiSection });
       });
 
       it('should calculate next', () => {
@@ -29,7 +29,7 @@ describe('sectionIterator', () => {
 
     describe('and 1 item', () => {
       before(() => {
-        sectionIterator = createSectionIterator({ data: 1, isMultiSection });
+        sectionIterator = createSectionIterator({ data: 1, multiSection });
       });
 
       it('should calculate next', () => {
@@ -50,7 +50,7 @@ describe('sectionIterator', () => {
 
     describe('and multiple items', () => {
       before(() => {
-        sectionIterator = createSectionIterator({ data: 4, isMultiSection });
+        sectionIterator = createSectionIterator({ data: 4, multiSection });
       });
 
       it('should calculate next', () => {
@@ -75,12 +75,12 @@ describe('sectionIterator', () => {
 
   describe('with 1 section', () => {
     before(() => {
-      isMultiSection = true;
+      multiSection = true;
     });
 
     describe('and no items', () => {
       before(() => {
-        sectionIterator = createSectionIterator({ data: [0], isMultiSection });
+        sectionIterator = createSectionIterator({ data: [0], multiSection });
       });
 
       it('should calculate next', () => {
@@ -98,7 +98,7 @@ describe('sectionIterator', () => {
 
     describe('and 1 item', () => {
       before(() => {
-        sectionIterator = createSectionIterator({ data: [1], isMultiSection });
+        sectionIterator = createSectionIterator({ data: [1], multiSection });
       });
 
       it('should calculate next', () => {
@@ -119,7 +119,7 @@ describe('sectionIterator', () => {
 
     describe('and multiple items', () => {
       before(() => {
-        sectionIterator = createSectionIterator({ data: [4], isMultiSection });
+        sectionIterator = createSectionIterator({ data: [4], multiSection });
       });
 
       it('should calculate next', () => {
@@ -144,8 +144,8 @@ describe('sectionIterator', () => {
 
   describe('with multiple sections', () => {
     before(() => {
-      isMultiSection = true;
-      sectionIterator = createSectionIterator({ data: [2, 0, 0, 4, 1, 0, 3, 0], isMultiSection });
+      multiSection = true;
+      sectionIterator = createSectionIterator({ data: [2, 0, 0, 4, 1, 0, 3, 0], multiSection });
     });
 
     it('should calculate next', () => {

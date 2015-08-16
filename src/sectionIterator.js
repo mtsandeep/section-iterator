@@ -1,4 +1,4 @@
-export default function({ data, isMultiSection }) {
+export default function({ data, multiSection }) {
   function nextNonEmptySectionIndex(sectionIndex) {
     if (sectionIndex === null) {
       sectionIndex = 0;
@@ -30,7 +30,7 @@ export default function({ data, isMultiSection }) {
   function next(position) {
     let [sectionIndex, itemIndex] = position;
 
-    if (isMultiSection) {
+    if (multiSection) {
       if (itemIndex === null || itemIndex === data[sectionIndex] - 1) {
         sectionIndex = nextNonEmptySectionIndex(sectionIndex);
 
@@ -58,7 +58,7 @@ export default function({ data, isMultiSection }) {
   function prev(position) {
     let [sectionIndex, itemIndex] = position;
 
-    if (isMultiSection) {
+    if (multiSection) {
       if (itemIndex === null || itemIndex === 0) {
         sectionIndex = prevNonEmptySectionIndex(sectionIndex);
 
