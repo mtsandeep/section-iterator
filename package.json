@@ -1,6 +1,6 @@
 {
   "name": "section-iterator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple iterator for flat and multi section lists",
   "main": "dist/sectionIterator.js",
   "repository": {
