@@ -1,4 +1,4 @@
-export default function({ data, multiSection }) {
+module.exports = ({ data, multiSection }) => {
   function nextNonEmptySectionIndex(sectionIndex) {
     if (sectionIndex === null) {
       sectionIndex = 0;
@@ -92,4 +92,4 @@ export default function({ data, multiSection }) {
     prev,
     isLast
   };
-}
+};

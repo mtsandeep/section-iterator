@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import createSectionIterator from './sectionIterator';
+import createSectionIterator from './index';
 
 let sectionIterator, multiSection;
 
