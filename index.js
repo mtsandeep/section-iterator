@@ -27,7 +27,7 @@ module.exports = ({ data, multiSection }) => {
     return sectionIndex === -1 ? null : sectionIndex;
   }
 
-  function next(position) {
+  function next(position, loop = false) {
     let [sectionIndex, itemIndex] = position;
 
     if (multiSection) {
@@ -45,7 +45,11 @@ module.exports = ({ data, multiSection }) => {
     }
 
     if (data === 0 || itemIndex === data - 1) {
-      return [null, null];
+      if(loop === false){
+        return [null, data - 1];
+      } else {
+        return [null, null];
+      }
     }
 
     if (itemIndex === null) {
@@ -55,7 +59,7 @@ module.exports = ({ data, multiSection }) => {
     return [null, itemIndex + 1];
   }
 
-  function prev(position) {
+  function prev(position, loop = false) {
     let [sectionIndex, itemIndex] = position;
 
     if (multiSection) {
@@ -73,7 +77,11 @@ module.exports = ({ data, multiSection }) => {
     }
 
     if (data === 0 || itemIndex === 0) {
-      return [null, null];
+      if(loop === false){
+        return [null, 0];
+      } else {
+        return [null, null];
+      }
     }
 
     if (itemIndex === null) {
